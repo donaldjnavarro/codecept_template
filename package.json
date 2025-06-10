@@ -1,0 +1,28 @@
+{
+    "name": "codecept",
+    "version": "1.0.0",
+    "description": "Codecept basic template",
+    "license": "ISC",
+    "author": "Donald Navarro",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "test": "npx codeceptjs run",
+        "codeceptjs": "codeceptjs run --steps",
+        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
+        "codeceptjs:ui": "codecept-ui --app",
+        "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples"
+    },
+    "devDependencies": {
+        "@codeceptjs/configure": "^1.0.4",
+        "@codeceptjs/examples": "^1.2.4",
+        "@codeceptjs/ui": "^1.2.4",
+        "@types/node": "^24.0.0",
+        "codeceptjs": "^3.7.3",
+        "playwright": "^1.53.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.3"
+    }
+}
