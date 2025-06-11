@@ -25,6 +25,11 @@ exports.config = {
     retryTo: {
       enabled: false,
     },
+    allure: {
+      enabled: true,
+      require: '@codeceptjs/allure-legacy',
+      outputDir: './output/allure',
+    }
   },
   name: 'codecept',
 };
