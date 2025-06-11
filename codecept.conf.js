@@ -2,18 +2,21 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 
 setHeadlessWhen(process.env.HEADLESS);
 
-module.exports = {
+exports.config = {
   tests: './tests/scenarios/*',
   output: './output',
   helpers: {
     Playwright: {
-      browser: 'chromium',
       url: 'http://localhost',
       show: true,
+      browser: 'chromium',
+    },
+    REST: {
+      endpoint: 'https://api.example.com',
     },
   },
   include: {
-    I: './steps_file.js',
+    I: './tests/steps/steps_file.js',
   },
   plugins: {
     tryTo: {
