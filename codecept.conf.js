@@ -16,7 +16,7 @@ exports.config = {
     },
   },
   include: {
-    I: './steps_file.js',
+    I: './tests/steps/steps_file.js',
   },
   plugins: {
     tryTo: {
