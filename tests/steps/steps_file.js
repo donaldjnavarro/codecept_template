@@ -1,7 +1,7 @@
-// in this file you can append custom step methods to 'I' object
+const logger = require('./../../utils/logger')
 
 module.exports = function() {
-  console.log('STEPS')
+  logger.info('Loading the steps file')
   return actor({
 
     // Define custom steps here, use 'this' to access default methods of I.

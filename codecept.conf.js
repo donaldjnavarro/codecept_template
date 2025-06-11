@@ -1,4 +1,5 @@
 const { setHeadlessWhen } = require('@codeceptjs/configure');
+require('dotenv').config();
 
 setHeadlessWhen(process.env.HEADLESS);
 
