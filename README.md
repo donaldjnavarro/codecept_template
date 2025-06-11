@@ -31,3 +31,5 @@ For more information, visit [CodeceptJS Documentation](https://codecept.io/).
 ### Test Reports
 
 We use **Allure** to handle test reports. Its handling is baked into the NodeJS package scripts.
+
+> 🚨 Warning! Every time you run the tests, Rifraf will delete the entire `./output/` folder. So if you need something from your test results, you need to manually move it before running another test.
