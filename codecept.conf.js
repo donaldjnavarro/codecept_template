@@ -32,5 +32,8 @@ exports.config = {
       outputDir: './output/allure',
     }
   },
+  require: [
+    './tests/_hooks.js'
+  ],
   name: 'codecept',
 };
