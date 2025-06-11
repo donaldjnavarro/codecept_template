@@ -1,4 +1,5 @@
 const assert = require('assert');
+const logger = require('./../../utils/logger')
 
 Feature('Example API usage');
 
@@ -18,5 +19,5 @@ Scenario('GET requests @api', async ({ I, REST }) => {
     const json = response.data;
     assert.strictEqual(typeof json, 'object', 'Expected API response body to be an object')
 
-    console.log(`[debug] response: ${JSON.stringify(json)}`);
+    logger.info(`Example API request's response: ${JSON.stringify(json)}`);
 });

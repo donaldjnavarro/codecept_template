@@ -7,16 +7,23 @@
     "type": "commonjs",
     "main": "index.js",
     "scripts": {
-        "test": "npx codeceptjs run",
-        "codeceptjs": "codeceptjs run --steps",
-        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
-        "codeceptjs:ui": "codecept-ui --app",
-        "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
-        "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
-        "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples"
+        "test": "npm-run-all -c --serial clean test:run report:generate report:open",
+        "test:run": "codeceptjs run --plugins allure",
+        "report:generate": "allure generate output/allure --clean -o output/allure-report",
+        "report:open": "allure open output/allure-report",
+        "clean": "rimraf output"
     },
     "devDependencies": {
+        "@codeceptjs/allure-legacy": "^1.0.2",
+        "allure-commandline": "^2.34.0",
+        "allure-js-commons": "^3.2.2",
         "codeceptjs": "^3.7.3",
         "playwright": "^1.53.0"
+    },
+    "dependencies": {
+        "dotenv": "^16.5.0",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^6.0.1",
+        "winston": "^3.17.0"
     }
 }

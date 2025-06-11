@@ -1,4 +1,5 @@
 const { setHeadlessWhen } = require('@codeceptjs/configure');
+require('dotenv').config();
 
 setHeadlessWhen(process.env.HEADLESS);
 
@@ -25,6 +26,14 @@ exports.config = {
     retryTo: {
       enabled: false,
     },
+    allure: {
+      enabled: true,
+      require: '@codeceptjs/allure-legacy',
+      outputDir: './output/allure',
+    }
   },
+  require: [
+    './tests/_hooks.js'
+  ],
   name: 'codecept',
 };
