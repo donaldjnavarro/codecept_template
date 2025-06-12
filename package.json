@@ -7,8 +7,8 @@
     "type": "commonjs",
     "main": "index.js",
     "scripts": {
-        "test": "npm-run-all -c --serial clean test:run report:generate report:open",
-        "test:run": "codeceptjs run --plugins allure",
+        "test": "codeceptjs run --plugins allure",
+        "test:report": "npm-run-all -c --serial clean test report:generate report:open",
         "report:generate": "allure generate output/allure --clean -o output/allure-report",
         "report:open": "allure open output/allure-report",
         "clean": "rimraf output"
