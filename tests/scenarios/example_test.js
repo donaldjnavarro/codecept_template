@@ -1,4 +1,3 @@
-const assert = require('assert')
 Feature('Example UI tests');
 
 Scenario('Test an example page',  ({ I }) => {
