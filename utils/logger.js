@@ -2,7 +2,6 @@
  * Utilities to support logging
  */
 const { createLogger, format, transports } = require('winston');
-const fs = require('fs');
 const path = require('path');
 
 const FALLBACK_LOG_LEVEL = 'info';

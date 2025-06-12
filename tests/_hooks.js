@@ -51,7 +51,7 @@ event.dispatcher.on(event.test.before, async () => {
 });
 
 
-event.dispatcher.on(event.test.finished, function (test) {
+event.dispatcher.on(event.test.finished, function () {
     const allure = container.plugins('allure');
 
     if (allure && allure.addAttachment) {

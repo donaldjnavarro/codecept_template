@@ -9,6 +9,8 @@ const codeceptGlobals = {
   Before: "readonly",
   After: "readonly",
   I: "readonly",
+  actor: "readonly",
+  process: "readonly"
 };
 
 module.exports = [

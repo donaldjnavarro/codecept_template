@@ -3,7 +3,7 @@ const logger = require('./../../utils/logger')
 
 Feature('Example API usage');
 
-Scenario('GET requests @api', async ({ I, REST }) => {
+Scenario('GET requests @api', async ({ I }) => {
     I.haveRequestHeaders({
         'Content-Type': 'application/json'
     });

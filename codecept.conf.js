@@ -1,9 +1,8 @@
 const { setHeadlessWhen } = require('@codeceptjs/configure');
-const { webkit } = require('playwright');
 require('dotenv').config();
 
 /** Headless configs */
-headless = (process.env.HEADLESS || '').toLowerCase() === 'true';
+const headless = (process.env.HEADLESS || '').toLowerCase() === 'true';
 // This is redundant for Playwright with the 'show' setting below,
 // but theoretically this configuration helper is more universal
 // when pivoting to use to other automation frameworks
