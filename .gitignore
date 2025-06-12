@@ -31,7 +31,6 @@ out/
 
 # Environment files
 .env
-.env.*
 
 # Misc
 *.local

@@ -7,17 +7,25 @@
     "type": "commonjs",
     "main": "index.js",
     "scripts": {
-        "test": "npm-run-all -c --serial clean test:run report:generate report:open",
-        "test:run": "codeceptjs run --plugins allure",
+        "test": "codeceptjs run --plugins allure",
+        "test:report": "npm-run-all -c --serial clean test report:generate report:open",
         "report:generate": "allure generate output/allure --clean -o output/allure-report",
         "report:open": "allure open output/allure-report",
-        "clean": "rimraf output"
+        "clean": "rimraf output",
+        "lint": "eslint ."
     },
     "devDependencies": {
         "@codeceptjs/allure-legacy": "^1.0.2",
+        "@eslint/js": "^9.28.0",
+        "@eslint/json": "^0.12.0",
+        "@eslint/markdown": "^6.5.0",
         "allure-commandline": "^2.34.0",
         "allure-js-commons": "^3.2.2",
         "codeceptjs": "^3.7.3",
+        "eslint": "^9.28.0",
+        "eslint-plugin-markdown": "^5.1.0",
+        "eslint-plugin-react": "^7.37.5",
+        "globals": "^16.2.0",
         "playwright": "^1.53.0"
     },
     "dependencies": {

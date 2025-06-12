@@ -3,7 +3,7 @@ const logger = require('./../../utils/logger')
 
 Feature('Example API usage');
 
-Scenario('GET requests @api', async ({ I, REST }) => {
+Scenario('GET requests @api', async ({ I }) => {
     I.haveRequestHeaders({
         'Content-Type': 'application/json'
     });
@@ -19,5 +19,5 @@ Scenario('GET requests @api', async ({ I, REST }) => {
     const json = response.data;
     assert.strictEqual(typeof json, 'object', 'Expected API response body to be an object')
 
-    logger.info(`Example API request's response: ${JSON.stringify(json)}`);
+    logger.debug(`Example API request's response: ${JSON.stringify(json)}`);
 });
