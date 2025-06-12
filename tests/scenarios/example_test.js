@@ -3,5 +3,6 @@ Feature('Example UI tests');
 
 Scenario('Test an example page',  ({ I }) => {
     I.amOnPage('https://example.com');
-    assert.fail()
+    I.seeInTitle('Example Domain');
+    I.see('More information...')
 });
