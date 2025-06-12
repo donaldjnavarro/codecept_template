@@ -20,13 +20,13 @@ event.dispatcher.on(event.test.before, async () => {
         // that is fine, we can throw a warning, but we only need 
         // one test to have a browser to get what we need
         const helper = container.helpers('Playwright');
-        if (!helper) return;
+        if (!helper) return logger.debug('Helpers not found while loading allure environment data');
 
         const page = await helper.page;
-        if (!page) return;
+        if (!page) return logger.debug('Page not found while loading allure environment data');
 
         const browser = page.context().browser();
-        if (!browser) return;
+        if (!browser) return logger.debug('Browser not found while loading allure environment data');
 
         const browserName = browser.browserType().name();
         const browserVersion = browser.version();
