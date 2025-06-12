@@ -1,7 +1,7 @@
 const assert = require('assert')
-Feature('example');
+Feature('Example UI tests');
 
-Scenario('test something',  ({ I }) => {
+Scenario('Test an example page',  ({ I }) => {
     I.amOnPage('https://example.com');
     assert.fail()
 });
