@@ -35,6 +35,7 @@ module.exports = [
     },
     rules: {
       ...js.configs.recommended.rules,
+      indent: ["warn", 4]
     },
   },
   {
