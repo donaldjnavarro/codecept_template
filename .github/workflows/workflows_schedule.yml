@@ -1,4 +1,4 @@
-name: Recurring actions
+name: Weekly regression
 
 on:
   schedule:
