@@ -1,0 +1,11 @@
+name: Recurring actions
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes as a test (temporary)
+  workflow_dispatch:       # Optional: allows manual trigger via GitHub UI
+
+jobs:
+  run-tests:
+    if: github.ref == 'refs/heads/master'
+    uses: ./.github/workflows/job_tests.yml

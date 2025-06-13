@@ -12,41 +12,41 @@ setHeadlessWhen(headless);
 const supportedBrowsers = ['chromium', 'firefox', 'webkit'];
 const selectedBrowser = (process.env.BROWSER || '').toLowerCase();
 if (!supportedBrowsers.includes(selectedBrowser)) {
-  throw new Error(`Invalid BROWSER value in .env. Must be one of: ${supportedBrowsers.join(', ')}`);
+    throw new Error(`Invalid BROWSER value in .env. Must be one of: ${supportedBrowsers.join(', ')}`);
 }
 
 /** Full config */
 exports.config = {
-  tests: './tests/scenarios/*',
-  output: './output',
-  helpers: {
-    Playwright: {
-      url: 'http://localhost',
-      browser: selectedBrowser,
-      show: !headless
+    tests: './tests/scenarios/*',
+    output: './output',
+    helpers: {
+        Playwright: {
+            url: 'http://localhost',
+            browser: selectedBrowser,
+            show: !headless
+        },
+        REST: {
+            endpoint: 'https://api.example.com',
+        },
     },
-    REST: {
-      endpoint: 'https://api.example.com',
+    include: {
+        I: './tests/steps/steps_file.js',
     },
-  },
-  include: {
-    I: './tests/steps/steps_file.js',
-  },
-  plugins: {
-    tryTo: {
-      enabled: false,
+    plugins: {
+        tryTo: {
+            enabled: false,
+        },
+        retryTo: {
+            enabled: false,
+        },
+        allure: {
+            enabled: true,
+            require: '@codeceptjs/allure-legacy',
+            outputDir: './output/allure',
+        }
     },
-    retryTo: {
-      enabled: false,
-    },
-    allure: {
-      enabled: true,
-      require: '@codeceptjs/allure-legacy',
-      outputDir: './output/allure',
-    }
-  },
-  require: [
-    './tests/_hooks.js'
-  ],
-  name: 'codecept',
+    require: [
+        './tests/_hooks.js'
+    ],
+    name: 'codecept',
 };

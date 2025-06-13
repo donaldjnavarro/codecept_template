@@ -4,45 +4,46 @@ const markdown = require("eslint-plugin-markdown");
 
 // Define CodeceptJS globals as readonly
 const codeceptGlobals = {
-  Feature: "readonly",
-  Scenario: "readonly",
-  Before: "readonly",
-  After: "readonly",
-  I: "readonly",
-  actor: "readonly",
-  process: "readonly"
+    Feature: "readonly",
+    Scenario: "readonly",
+    Before: "readonly",
+    After: "readonly",
+    I: "readonly",
+    actor: "readonly",
+    process: "readonly"
 };
 
 module.exports = [
-  {
-    ignores: [
-      "output/**",
-      "node_modules/**",
-      "*.log",
-    ],
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,jsx}"],
-    languageOptions: {
-      ecmaVersion: 2022,
-      sourceType: "commonjs",
-      globals: {
-        // Spread existing browser globals
-        ...globals.browser,
-        // Add CodeceptJS globals
-        ...codeceptGlobals,
-      },
+    {
+        ignores: [
+            "output/**",
+            "node_modules/**",
+            "*.log",
+        ],
     },
-    rules: {
-      ...js.configs.recommended.rules,
+    {
+        files: ["**/*.{js,mjs,cjs,jsx}"],
+        languageOptions: {
+            ecmaVersion: 2022,
+            sourceType: "commonjs",
+            globals: {
+                // Spread existing browser globals
+                ...globals.browser,
+                // Add CodeceptJS globals
+                ...codeceptGlobals,
+            },
+        },
+        rules: {
+            ...js.configs.recommended.rules,
+            indent: ["warn", 4]
+        },
     },
-  },
-  {
-    files: ["**/*.md"],
-    plugins: {
-      markdown,
+    {
+        files: ["**/*.md"],
+        plugins: {
+            markdown,
+        },
+        processor: "markdown/markdown",
+        rules: {},
     },
-    processor: "markdown/markdown",
-    rules: {},
-  },
 ];
