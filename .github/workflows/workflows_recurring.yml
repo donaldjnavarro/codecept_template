@@ -7,5 +7,4 @@ on:
 
 jobs:
   run-tests:
-    if: github.ref == 'refs/heads/master'
     uses: ./.github/workflows/job_tests.yml

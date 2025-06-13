@@ -9,6 +9,8 @@ on:
 
 jobs:
   test:
+    # Run on any branch during PR workflows, otherwise only run on main
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
