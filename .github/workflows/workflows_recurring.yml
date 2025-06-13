@@ -7,4 +7,4 @@ on:
 
 jobs:
     run-tests:
-    uses: ./.github/workflows/job_tests.yml
+        uses: ./.github/workflows/job_tests.yml

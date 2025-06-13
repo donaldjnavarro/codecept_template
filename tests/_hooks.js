@@ -34,11 +34,11 @@ event.dispatcher.on(event.test.before, async () => {
         logger.info('Gathering environment data for Allure report');
         wroteEnv = true;
         const envContent = [
-        `browser=${browserName}`,
-        `browser.version=${browserVersion}`,
-        `os.type=${os.type()}`,
-        `os.platform=${os.platform()}`,
-        `os.release=${os.release()}`
+            `browser=${browserName}`,
+            `browser.version=${browserVersion}`,
+            `os.type=${os.type()}`,
+            `os.platform=${os.platform()}`,
+            `os.release=${os.release()}`
         ].join('\n');
 
         const dir = path.join(process.cwd(), 'output', 'allure');
