@@ -1,12 +1,14 @@
-name: Run CodeceptJS Tests
+name: Test Job
 
 on:
-  push:
-    branches: [main]
-  pull_request:
+  workflow_call:
+    inputs:
+      env_file:
+        required: false
+        type: string
 
 jobs:
-  test:
+    test:
     runs-on: ubuntu-latest
 
     steps:
