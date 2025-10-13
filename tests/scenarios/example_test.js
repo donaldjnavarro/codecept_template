@@ -1,7 +1,7 @@
 Feature('Example UI tests');
 
-Scenario('Test an example page',  ({ I }) => {
+Scenario('Test an example page', ({ I }) => {
     I.amOnPage('https://example.com');
     I.seeInTitle('Example Domain');
-    I.see('More information...')
+    I.see('This domain is for use in documentation examples without needing permission.')
 });
